@@ -15,6 +15,7 @@ def main():
     command = command.replace("{port}", lport)
     command = command.replace("{shell}", shell)
     print(command)
+    print(20*"-")
     start_listener(lport)
 
 def start_listener(lport: str):
