@@ -7,15 +7,18 @@ import pyperclip
 
 def main():
     os.system("clear")
-    command = get_rev_shell()
+    command, opsys = get_rev_shell()
+    print(opsys)
     print(20*"-")
-    os.system("clear")
+    #os.system("clear")
     lhost = get_my_ip()
     os.system("clear")
     print(20*"-")
     lport = input(f'[+] Choose a port: ')
     print(20*"-")
     os.system("clear")
+    # TODO: add opsys to before choosing shell
+    # opsys: mac, linux, windows
     shell = get_shell()
     os.system("clear")
     print(20*"-")
@@ -50,7 +53,7 @@ def get_rev_shell():
         command = randomize_powershell_variables(data[option]["command"])
     else:
         command = data[option]["command"]
-    return command
+    return (command, opsys)
 
 def rev_shell_type():
     opsys = ["linux", "mac", "windows"]
@@ -86,9 +89,8 @@ def random_variable_generator():
         new_var += random.choice(abc)
     return new_var
 
-
-
 def get_shell():
+    # TODO: choose depends on OS
     shells = ['sh', '/bin/sh', 'bash', '/bin/bash', 'cmd', 'powershell', 'pwsh', 'ash', 'bsh', 'csh', 'ksh', 'zsh', 'pdksh', 'tcsh', 'mksh', 'dash']
     counter = 1
     for sh in shells:
