@@ -11,9 +11,8 @@ import sys
 def main():
     os.system("clear")
     command, opsys = get_rev_shell()
-    print(opsys)
     print(20*"-")
-    #os.system("clear")
+    os.system("clear")
     lhost = get_my_ip()
     os.system("clear")
     print(20*"-")
