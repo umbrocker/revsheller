@@ -2,13 +2,16 @@
 
 import json
 import os
+import sys
 import random
 import pyperclip
-import sys
 
 # TODO: launch with arguments
 
 def main():
+    if len(sys.argv) > 1:
+        pass
+        exit(0)
     os.system("clear")
     command, opsys = get_rev_shell()
     print(20*"-")
