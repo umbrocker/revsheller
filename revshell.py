@@ -4,6 +4,9 @@ import json
 import os
 import random
 import pyperclip
+import sys
+
+# TODO: launch with arguments
 
 def main():
     os.system("clear")
