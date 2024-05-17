@@ -1,8 +1,11 @@
 # CLI Reverse shell generator
 ## inspired by [https://github.com/0dayCTF/reverse-shell-generator](https://github.com/0dayCTF/reverse-shell-generator)
 ---
-## Python3 package requirements
+## Requirements
 ```shell
+# Linux package
+xclip
+# Python3 module
 pyperclip
 ```
 ## Usage
