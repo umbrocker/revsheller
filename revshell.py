@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+from datetime import datetime
 import json
 import os
 import sys
@@ -30,8 +31,13 @@ def main():
     command = command.replace("{shell}", shell)
     pyperclip.copy(command)
     print(command)
+    now = datetime.strftime(datetime.now(), "%m%d_%H%M%S")
+    command_file = f"ps_cmd_{now}.txt"
+    with open(command_file, "w") as cf:
+        cf.write(command)
+        cf.flush()
     print(20*"-")
-    print("[*] Command copied to clipboard.")
+    print(f"[*] Command copied to clipboard and written to file: {command_file}")
     start_listener(lport)
 
 def start_listener(lport: str):
