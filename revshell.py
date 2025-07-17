@@ -43,7 +43,7 @@ def start_listener(lport: str):
             os.system(f'nc -nlvp {lport}')
 
 def get_rev_shell():
-    with open("revshells.json", "r") as j:
+    with open("/opt/rev_sheller/revshells.json", "r") as j:
         data = json.loads(j.read())    
     counter = 1
     opsys = rev_shell_type()
