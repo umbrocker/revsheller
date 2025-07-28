@@ -32,7 +32,7 @@ def main():
     pyperclip.copy(command)
     print(command)
     now = datetime.strftime(datetime.now(), "%m%d_%H%M%S")
-    command_file = f"ps_cmd_{now}.txt"
+    command_file = f"revshell_{now}.txt"
     with open(command_file, "w") as cf:
         cf.write(command)
         cf.flush()
