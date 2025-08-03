@@ -60,7 +60,7 @@ def get_rev_shell():
         if opsys in d["meta"]:
             print(f"[{counter}] {d['name']}")
         counter += 1
-    option = int(input(f"[+] Choose a revshell: ")) - 1
+    option = int(input("[+] Choose a revshell: ")) - 1
     if "powershell" in data[option]["name"].lower():
         command = randomize_powershell_variables(data[option]["command"])
     else:
@@ -86,7 +86,7 @@ def get_my_ip():
     for ip in myips:
         print(f"[{counter}] {ip}")
         counter += 1
-    lhost = int(input(f"[+] Choose LHOST: ")) - 1
+    lhost = int(input("[+] Choose LHOST: ")) - 1
     return myips[lhost]
 
 
