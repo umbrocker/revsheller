@@ -86,9 +86,12 @@ def get_my_ip():
     for ip in myips:
         print(f"[{counter}] {ip}")
         counter += 1
+    print(f"[{counter}] Other.")
     lhost = int(input("[+] Choose LHOST: ")) - 1
-    return myips[lhost]
-
+    try:
+        return myips[lhost]
+    except:
+        return input("[+] Enter IP/domain name: ")
 
 def randomize_powershell_variables(command: str):
     bad_vars = [
