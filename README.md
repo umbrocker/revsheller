@@ -15,5 +15,6 @@ sudo git clone https://github.com/umbrocker/revsheller.git
 cd revsheller
 sudo chmod 755 revshell.py
 sudo ln -s /opt/revsheller/revshell.py /usr/local/bin/revsheller
+cd ~
 revsheller
 ```
